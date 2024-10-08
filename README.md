@@ -39,6 +39,12 @@
 	- pyperclip==1.9.0
 
 
+### 利用イメージ:
+
+![ファイル右クリックイメージ](https://github.com/user-attachments/assets/265863c5-f839-423f-8a35-adf409b74538)
+![ディレクトリ右クリックイメージ](https://github.com/user-attachments/assets/e3c3ace2-e605-498a-9d9a-5746ea266c74)
+
+
 ## 基本フォルダ構成
 
 - `c:\users\{user_name}\WindUpTool`
