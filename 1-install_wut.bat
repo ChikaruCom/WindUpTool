@@ -45,6 +45,9 @@ REM 仮想環境をアクティベートしてパッケージをインストー�
 call conda.bat activate %ENV_NAME%
 pip install pandas==2.2.2 PyPDF2==3.0.1 pywin32==306 psutil==6.0.0 pyperclip==1.9.0
 
+REM Condaの初期化 (次回のシェルでcondaが使えるようにする)
+conda init
+
 REM スクリプトの実行
 set "SCRIPT_DIR=%~dp0"
 set "SCRIPT_PATH=%SCRIPT_DIR%%~n0.py"
