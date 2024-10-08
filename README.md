@@ -1,7 +1,7 @@
 # WindUpTool
 
 - 対象: Only Windows 10 & 11
-- 必要ツール: MS Office(一部の機能)
+- 必要ツール: 一部の機能ではMSのOfficeが必要になります。
 
 「WindUpTool」は、Windows 10および11上でMS Officeを必要とするツールで、右クリックメニューに追加されるショートカットを通じて、ファイルやフォルダの管理をサポートします。PDF結合やWordファイルのPDF変換、CSVからTSV変換などを行います。どなたでもご自由にご利用いただけます。(※minicondaの現況のライセンスに依存します、リリース時点では無償で利用可能です。パッケージ管理はpipを利用しています。)
 
@@ -65,7 +65,7 @@
 - _wut_pdfs2pdf_dir: フォルダ内のPDFファイルを一覧表示し結合が可能
 	- ファイル名に`_`が含まれている場合、最後の"_"以降の名称を削除
 	- ファイル名に`_`が含まれていない場合、接尾辞に"-merged"が追加
-- _wut_word2pdf_dir: フォルダ内のWORDファイルを一覧表示しPDF化
+- _wut_word2pdf_dir(※要: MS Office): フォルダ内のWORDファイルを一覧表示しPDF化
 	- `c:\users\{user_name}\WindUpTool\output\{日時}`にデータ出力
 	- 出力時にエクスプローラ表示
 
