@@ -23,11 +23,11 @@ Windowsにおける特定の環境をサポートするための仕組みです�
 
 ## 基本フォルダ構成
 
-- c:\users\{user_name}\WindUpTool
-- c:\users\{user_name}\WindUpTool\miniconda3
-- c:\users\{user_name}\WindUpTool\karakuri
-- c:\users\{user_name}\WindUpTool\assets
-- c:\users\{user_name}\WindUpTool\output
+- `c:\users\{user_name}\WindUpTool`
+- `c:\users\{user_name}\WindUpTool\miniconda3`
+- `c:\users\{user_name}\WindUpTool\karakuri`
+- `c:\users\{user_name}\WindUpTool\assets`
+- `c:\users\{user_name}\WindUpTool\output`
 
 ## src:
 
@@ -38,6 +38,6 @@ Windowsにおける特定の環境をサポートするための仕組みです�
 	- ファイル名に"_"が含まれている場合、最後の"_"以降の名称を削除
 	- ファイル名に"_"が含まれていない場合、接尾辞に"-merged"が追加
 - _wut_word2pdf_dir: フォルダ内のWORDファイルを一覧表示しPDF化
-	- c:\users\{user_name}\WindUpTool\output\{日時}のディレクトリにデータ出力
-	- 出力時にエクスプローラで表示
+	- `c:\users\{user_name}\WindUpTool\output\{日時}`にデータ出力
+	- 出力時にエクスプローラ表示
 
