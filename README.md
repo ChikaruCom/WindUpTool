@@ -3,7 +3,7 @@
 - target: Only Windows 10 & 11
 - require: MS Office
 
-Windowsにおける特定の環境をサポートするための仕組みです。
+「WindUpTool」は、Windows 10および11上でMS Officeを必要とするツールで、右クリックメニューに追加されるショートカットを通じて、ファイルやフォルダの管理をサポートします。PDF結合やWordファイルのPDF変換、CSVからTSV変換などを行います。
 
 ## 1-install_wut.bat
 
