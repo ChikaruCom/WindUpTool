@@ -46,7 +46,7 @@ REM 仮想環境が既に存在するかチェック
 call conda activate %ENV_NAME%
 if %errorlevel% neq 0 (
     echo Creating environment %ENV_NAME%...
-    conda create -y --name %ENV_NAME% python=%PYTHON_VERSION%
+    conda create -y --name %ENV_NAME% python=%PYTHON_VERSION% pandas=2.2.2 PyPDF2=3.0.1 pywin32=306 psutil=6.0.0 pyperclip=1.9.0
 )
 
 REM 仮想環境をアクティベートしてスクリプトを実行

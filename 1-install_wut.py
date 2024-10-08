@@ -136,11 +136,11 @@ def main():
     # チェックするモジュールとバージョンのリスト
     modules_to_check = [
 #        ("numpy", None),  # numpy
-        ("pandas", None),  # pandas
-        ("PyPDF2", None),  # PyPDF2
-        ("win32com", None),  # win32com
-        ("psutil", None),
-        ("pyperclip", None),
+        ("pandas", "2.2.2"),  # pandas
+        ("PyPDF2", "3.01"),  # PyPDF2
+        ("pywin32", "306"),  # win32com
+        ("psutil", "6.0.0"),
+        ("pyperclip", "1.9.0"),
 #        ("requests", None)  # requests
     ]
 
