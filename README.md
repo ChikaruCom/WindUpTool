@@ -5,11 +5,17 @@
 
 「WindUpTool」は、Windows 10および11上でMS Officeを必要とするツールで、右クリックメニューに追加されるショートカットを通じて、ファイルやフォルダの管理をサポートします。PDF結合やWordファイルのPDF変換、CSVからTSV変換などを行います。
 
+
+## インストール方法
+
+1-install_wut.batを管理者権限で実行してください。必要ツールのダウンロードやインストールを行います。レジストリの変更を伴いますので、必要に応じて1-install_wut.pyのコードレビューを行ってください。
+
+
 ## 1-install_wut.bat
 
 - "%UserProfile%\WindUpTool"の作成
 - miniconda3のダウンロード&インストール: "%UserProfile%\WindUpTool\Miniconda3"
-- 仮想環境: py3.12_wut　の作成(python 3.12)
+- 仮想環境: py3.12_wut の作成(python 3.12)
 - "%UserProfile%\WindUpTool\karakuri"の作成
 - 右クリックメニューの追加: Wind Up Tool
 	- データを右クリックした場合: 個別のデータ用のショートカット表示
@@ -21,6 +27,7 @@
 	- psutil
 	- pyperclip
 
+
 ## 基本フォルダ構成
 
 - `c:\users\{user_name}\WindUpTool`
@@ -28,6 +35,7 @@
 - `c:\users\{user_name}\WindUpTool\karakuri`
 - `c:\users\{user_name}\WindUpTool\assets`
 - `c:\users\{user_name}\WindUpTool\output`
+
 
 ## src:
 

@@ -27,7 +27,8 @@ set "ENV_NAME=py3.12_wut"
 set "PYTHON_VERSION=3.12"
 
 REM 実行スクリプトのパスを設定
-set "SCRIPT_PATH=1-install_wut.py"
+set "SCRIPT_DIR=%~dp0"
+set "SCRIPT_PATH=%SCRIPT_DIR%%~n0.py"
 
 REM Minicondaが既にインストールされているかチェック
 if not exist "%MINICONDA_PATH%" (
