@@ -22,6 +22,9 @@ def generate_registry_script():
     # 実行時のユーザー名を取得
     user_name = getpass.getuser()
 
+    # スクリプトが実行されているディレクトリの絶対パスを取得
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
     # 基本設定
     top_menu_name = "WindUpTool"
     icon_path = f"C:\\Users\\{user_name}\\WindUpTool\\assets\\ico_wut.ico"
@@ -88,7 +91,8 @@ def generate_registry_script():
     registry_script = '\n'.join(registry_data)
     
     # レジストリファイルの保存
-    output_file = f"WindUpTool_registry_{user_name}.reg"
+    #output_file = f"WindUpTool_registry_{user_name}.reg"
+    output_file = os.path.join(script_dir, f"WindUpTool_registry_{user_name}.reg")
     with open(output_file, 'w') as f:
         f.write("Windows Registry Editor Version 5.00\n\n")
         f.write(registry_script)
