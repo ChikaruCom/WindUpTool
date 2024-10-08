@@ -41,7 +41,10 @@
 
 ### 利用イメージ:
 
+【ファイルを右クリックした場合】 
 ![ファイル右クリックイメージ](https://github.com/user-attachments/assets/265863c5-f839-423f-8a35-adf409b74538)
+
+【ディレクトリの右クリックした場合】
 ![ディレクトリ右クリックイメージ](https://github.com/user-attachments/assets/e3c3ace2-e605-498a-9d9a-5746ea266c74)
 
 
