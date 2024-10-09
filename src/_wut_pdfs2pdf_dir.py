@@ -148,10 +148,8 @@ class FileSelectorApp(tk.Tk):
                     merger.append(pdf_path)
 
                 output_name = os.path.splitext(selected_files[0])[0]
-                if "_" in output_name:
-                    output_name = "_".join(output_name.split("_")[:-1])
-                else:
-                    output_name = output_name + "-merged"
+                output_name = output_name + "-merged"
+
                 output_pdf = filedialog.asksaveasfilename(initialfile=output_name, defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")], initialdir=self.current_directory)
                 if output_pdf:
                     with open(output_pdf, 'wb') as fout:
