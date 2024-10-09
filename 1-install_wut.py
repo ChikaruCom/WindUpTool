@@ -45,9 +45,14 @@ def generate_registry_script():
         # 変数展開考慮
         escape_target = target.replace("\\", "\\\\")
         registry_data.append(f'[HKEY_CLASSES_ROOT\\{target}\\shell\\{top_menu_name}]')
-        registry_data.append(f'"MUIVerb"="Wind Up Tool"')
-        registry_data.append(f'"ExtendedSubCommandsKey"="{escape_target}\\\\shell\\\\{top_menu_name}\\\\submenu1"')
-        registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut.ico\\""')
+        if "Directory" in target:
+            registry_data.append(f'"MUIVerb"="Wind Up Tool (Dir)"')
+            registry_data.append(f'"ExtendedSubCommandsKey"="{escape_target}\\\\shell\\\\{top_menu_name}\\\\submenu1"')
+            registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-toolbox.ico\\""')
+        else:
+            registry_data.append(f'"MUIVerb"="Wind Up Tool (File)"')
+            registry_data.append(f'"ExtendedSubCommandsKey"="{escape_target}\\\\shell\\\\{top_menu_name}\\\\submenu1"')
+            registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut.ico\\""')
 
         # サブメニューの設定
         registry_data.append(f'')
@@ -73,6 +78,16 @@ def generate_registry_script():
             if "Directory" in target:
                 registry_data.append(f'[HKEY_CLASSES_ROOT\\{target}\\shell\\{top_menu_name}\\submenu1\\shell\\{menu_name}]')
                 registry_data.append(f'@="{menu_name}"')
+                if "pdfs" in file_name:
+                    registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-pdf.ico\\""')
+                if "word" in file_name:
+                    registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-word.ico\\""')
+                if "excel" in file_name:
+                    registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-excel.ico\\""')
+                if "script" in file_name:
+                    registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-display.ico\\""')
+                if "all" in file_name:
+                    registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-dir.ico\\""')
                 registry_data.append(f'')
                 registry_data.append(f'[HKEY_CLASSES_ROOT\\{target}\\shell\\{top_menu_name}\\submenu1\\shell\\{menu_name}\\command]')
                 registry_data.append(f'@="C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\karakuri\\\\{file_name} \\"%V\\""')
@@ -86,6 +101,17 @@ def generate_registry_script():
                 registry_data.append(f'@="C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\karakuri\\\\{file_name} \\"%1\\""')
                 registry_data.append(f'')
                 registry_data.append(f'')
+
+        # Dirの場合はoutputへのリンクとコマンドプロンプトへのショートカットを追加
+        if "Directory" in target:
+            registry_data.append(f'[HKEY_CLASSES_ROOT\\{target}\\shell\\{top_menu_name}\\submenu1\\shell\\Open Output Path]')
+            registry_data.append(f'@="Open Output Path"')
+            registry_data.append(f'"Icon"="\\"C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\assets\\\\ico_wut-database.ico\\""')
+            registry_data.append(f'')
+            registry_data.append(f'[HKEY_CLASSES_ROOT\\{target}\\shell\\{top_menu_name}\\submenu1\\shell\\Open Output Path\\command]')
+            registry_data.append(f'@="explorer C:\\\\Users\\\\{user_name}\\\\WindUpTool\\\\output"')
+            registry_data.append(f'')
+            registry_data.append(f'')
 
     # レジストリデータを一つの文字列にまとめる
     registry_script = '\n'.join(registry_data)
@@ -134,6 +160,40 @@ def main():
     # アイコンの移動
     ico_path = os.path.join(script_dir, 'ico', 'ico_wut.ico')
     shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-dir.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-display.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-excel.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-files.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-image.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-text.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-toolbox.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-word.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-csv.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-pdf.ico')
+    shutil.copy(ico_path, dst_folder)
+
+    ico_path = os.path.join(script_dir, 'ico', 'ico_wut-database.ico')
+    shutil.copy(ico_path, dst_folder)
+
 
 if __name__ == "__main__":
     main()
