@@ -43,7 +43,7 @@ if %errorlevel% neq 0 (
 
 REM 仮想環境をアクティベートしてパッケージをインストール
 call conda.bat activate %ENV_NAME%
-pip install pandas==2.2.2 PyPDF2==3.0.1 pywin32==306 psutil==6.0.0 pyperclip==1.9.0 openpyxl=3.1.5
+pip install pandas==2.2.2 PyPDF2==3.0.1 pywin32==306 psutil==6.0.0 pyperclip==1.9.0 openpyxl==3.1.5 chardet==5.2.0 pillow==10.4.0
 
 REM Condaの初期化 (次回のシェルでcondaが使えるようにする)
 conda init
