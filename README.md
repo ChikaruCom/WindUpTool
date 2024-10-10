@@ -63,9 +63,15 @@
 - _wut_any2sjis: テキストファイルのエンコードをsjisに変換し接尾辞に_sjisを追加
 - _wut_csv2tsv: CSVデータをTSVデータに変換
 - _wut_pdfs2pdf_dir: フォルダ内のPDFファイルを一覧表示し結合が可能
-	- ファイル名に`_`が含まれている場合、最後の"_"以降の名称を削除
-	- ファイル名に`_`が含まれていない場合、接尾辞に"-merged"が追加
+	- 接尾辞に"-merged"を追加しPDF結合
+	- 上下移動レコードがフォーカスされた状態で、 Ctrl + ↑ or ↓にて移動
 - _wut_word2pdf_dir(※要: MS Office): フォルダ内のWORDファイルを一覧表示しPDF化
+	- `c:\users\{user_name}\WindUpTool\output\{日時}`にデータ出力
+	- 出力時にエクスプローラ表示
+- _wut_excel2pdf_dir(※要: MS Office): フォルダ内のEXCELファイルを一覧表示しPDF化
+	- `c:\users\{user_name}\WindUpTool\output\{日時}`にデータ出力
+	- 出力時にエクスプローラ表示
+- _wut_all2pdf_dir(※要: MS Office): フォルダ内のWORD/EXCELファイルを一覧表示しPDF化
 	- `c:\users\{user_name}\WindUpTool\output\{日時}`にデータ出力
 	- 出力時にエクスプローラ表示
 
