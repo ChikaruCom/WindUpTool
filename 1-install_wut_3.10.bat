@@ -31,8 +31,8 @@ REM Minicondaのパスを一時的に環境変数に追加
 set "PATH=%MINICONDA_PATH%\Scripts;%MINICONDA_PATH%\condabin;%PATH%"
 
 REM 仮想環境名とPythonのバージョンを設定
-set "ENV_NAME=py3.12_wut"
-set "PYTHON_VERSION=3.12"
+set "ENV_NAME=py3.10_wut"
+set "PYTHON_VERSION=3.10"
 
 REM 仮想環境が既に存在するかチェック
 conda env list | findstr %ENV_NAME%
@@ -43,15 +43,15 @@ if %errorlevel% neq 0 (
 
 REM 仮想環境をアクティベートしてパッケージをインストール
 call conda.bat activate %ENV_NAME%
-pip install pandas==2.2.2 PyPDF2==3.0.1 pywin32==306 psutil==6.0.0 pyperclip==1.9.0 openpyxl==3.1.5 chardet==5.2.0 pillow==10.4.0 pycryptodome==3.21.0
+::pip install pandas==2.2.2 PyPDF2==3.0.1 pywin32==306 psutil==6.0.0 pyperclip==1.9.0 openpyxl==3.1.5 chardet==5.2.0 pillow==10.4.0 openai-whisper ffmpeg
 
 REM Condaの初期化 (次回のシェルでcondaが使えるようにする)
-conda init
+:: conda init
 
 REM スクリプトの実行
 set "SCRIPT_DIR=%~dp0"
 set "SCRIPT_PATH=%SCRIPT_DIR%%~n0.py"
-python %SCRIPT_PATH%
+python %SCRIPT_PATH% %1
 
 REM 仮想環境をデアクティベート
 conda.bat deactivate
