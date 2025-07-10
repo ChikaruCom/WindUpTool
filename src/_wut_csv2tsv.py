@@ -8,12 +8,20 @@ import os
 
 def convert_csv_to_tsv(csv_file):
     """Convert CSV file to TSV format."""
-    # ファイル名と拡張子の分離
     file_name, file_extension = os.path.splitext(csv_file)
     
-    # CSVファイルを読み込み、TSV形式で保存
     try:
-        df = pd.read_csv(csv_file)
+        # エンコーディング自動判定用
+        for encoding in ['utf-8', 'cp932', 'shift_jis', 'utf-16', 'latin1']:
+            try:
+                df = pd.read_csv(csv_file, encoding=encoding)
+                print(f"エンコーディングに成功: {encoding}")
+                break
+            except UnicodeDecodeError:
+                continue
+        else:
+            raise Exception("エンコーディングの自動判定に失敗しました。")
+
         tsv_file = f"{file_name}.tsv"
         df.to_csv(tsv_file, sep='\t', index=False)
         print(f"TSVファイルが作成されました: {tsv_file}")
